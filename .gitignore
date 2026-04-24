@@ -1,0 +1,23 @@
+# Oracle Wallet files (credentials - should not be committed)
+src/META-INF/cwallet.sso
+src/META-INF/cwallet.sso.lck
+
+# JDeveloper cache and debug data
+.data/
+*.jdb
+je.lck
+
+# Build directories
+**/classes/
+**/target/
+build/
+ViewController/public_html/WEB-INF/temp/
+
+# IDE files
+.jdeveloper/
+.vscode/
+*.jws.log
+
+# OS files
+.DS_Store
+Thumbs.db

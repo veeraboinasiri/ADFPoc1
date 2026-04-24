@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">study</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">310.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>study&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">406.0459</property>
+      <property
+         name="page">/study.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>siteTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">siteTF</property>
+      <property
+         name="x">566.5</property>
+      <property
+         name="y">430.1494</property>
+      <property
+         name="documentReference">/WEB-INF/siteTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">siteTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">site</property>
+      <property
+         name="sdm:polyPoints">R46,351.98254,402.1953,525.5,426.29883,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="TaskFlowCall3"
+      to="View2">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,525.0168,433.29883,351.5,409.1953,R54</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="STUDYEOView1"
+    ViewObjectName="model.STUDYEOView"/>
+  <ViewUsage
+    Name="STUDYEOView2"
+    ViewObjectName="model.STUDYEOView"/>
+  <ViewUsage
+    Name="SITEEOView1"
+    ViewObjectName="model.SITEEOView"/>
+  <ViewUsage
+    Name="SITEEOView2"
+    ViewObjectName="model.SITEEOView"/>
+  <ViewUsage
+    Name="siteQBVO1"
+    ViewObjectName="model.siteQBVO"/>
+  <ViewLinkUsage
+    Name="SysC00348995Link"
+    ViewLinkObjectName="model.SysC00348995Link"
+    SrcViewUsageName="model.AppModule.STUDYEOView2"
+    DstViewUsageName="model.AppModule.SITEEOView1"
+    Reversed="false"/>
+</AppModule>

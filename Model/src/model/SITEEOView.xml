@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SITEEOView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SITEEO"
+    Entity="model.SITEEO"/>
+  <ViewAttribute
+    Name="SiteId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SiteId"
+    EntityUsage="SITEEO"
+    AliasName="SITE_ID"/>
+  <ViewAttribute
+    Name="StudyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StudyId"
+    EntityUsage="SITEEO"
+    AliasName="STUDY_ID"/>
+  <ViewAttribute
+    Name="EffectiveStartDate"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveStartDate"
+    EntityUsage="SITEEO"
+    AliasName="EFFECTIVE_START_DATE"/>
+  <ViewAttribute
+    Name="EffectiveTodate"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveTodate"
+    EntityUsage="SITEEO"
+    AliasName="EFFECTIVE_TODATE"/>
+  <ViewAttribute
+    Name="State"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="State"
+    EntityUsage="SITEEO"
+    AliasName="STATE"/>
+  <ViewAttribute
+    Name="SiteNum"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SiteNum"
+    EntityUsage="SITEEO"
+    AliasName="SITE_NUM"/>
+</ViewObject>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  
+  <!--<h:outputLabel value="#{pageFlowScope.studyIdTF}" id="ol1"/>-->
+  <af:panelCollection id="pc1">
+    <f:facet name="menus"/>
+    <f:facet name="toolbar"/>
+    <f:facet name="statusbar"/>
+    <af:table value="#{bindings.siteQBVO1.collectionModel}" var="row" rows="#{bindings.siteQBVO1.rangeSize}"
+              emptyText="#{bindings.siteQBVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.siteQBVO1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.siteQBVO1.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.siteQBVO1.rangeSize}" filterModel="#{bindings.siteQBVO1Query.queryDescriptor}"
+              filterVisible="true" queryListener="#{bindings.siteQBVO1Query.processQuery}" varStatus="vs" id="t1">
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.SiteId.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.SiteId.label}" id="c1">
+        <af:inputText value="#{row.bindings.SiteId.inputValue}" label="#{bindings.siteQBVO1.hints.SiteId.label}"
+                      required="#{bindings.siteQBVO1.hints.SiteId.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.SiteId.displayWidth}"
+                      maximumLength="#{bindings.siteQBVO1.hints.SiteId.precision}"
+                      shortDesc="#{bindings.siteQBVO1.hints.SiteId.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.SiteId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.StudyId.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.StudyId.label}" id="c2">
+        <af:inputText value="#{row.bindings.StudyId.inputValue}" label="#{bindings.siteQBVO1.hints.StudyId.label}"
+                      required="#{bindings.siteQBVO1.hints.StudyId.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.StudyId.displayWidth}"
+                      maximumLength="#{bindings.siteQBVO1.hints.StudyId.precision}"
+                      shortDesc="#{bindings.siteQBVO1.hints.StudyId.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.StudyId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.EffectiveStartDate.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.EffectiveStartDate.label}" id="c3">
+        <f:facet name="filter">
+          <af:inputDate value="#{bindings.siteQBVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EffectiveStartDate.value}"
+                        id="id1">
+            <af:convertDateTime pattern="#{bindings.siteQBVO1.hints.EffectiveStartDate.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:inputDate value="#{row.bindings.EffectiveStartDate.inputValue}"
+                      label="#{bindings.siteQBVO1.hints.EffectiveStartDate.label}"
+                      required="#{bindings.siteQBVO1.hints.EffectiveStartDate.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.EffectiveStartDate.displayWidth}"
+                      shortDesc="#{bindings.siteQBVO1.hints.EffectiveStartDate.tooltip}" id="id2">
+          <f:validator binding="#{row.bindings.EffectiveStartDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.siteQBVO1.hints.EffectiveStartDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.EffectiveTodate.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.EffectiveTodate.label}" id="c4">
+        <f:facet name="filter">
+          <af:inputDate value="#{bindings.siteQBVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.EffectiveTodate.value}"
+                        id="id3">
+            <af:convertDateTime pattern="#{bindings.siteQBVO1.hints.EffectiveTodate.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:inputDate value="#{row.bindings.EffectiveTodate.inputValue}"
+                      label="#{bindings.siteQBVO1.hints.EffectiveTodate.label}"
+                      required="#{bindings.siteQBVO1.hints.EffectiveTodate.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.EffectiveTodate.displayWidth}"
+                      shortDesc="#{bindings.siteQBVO1.hints.EffectiveTodate.tooltip}" id="id4">
+          <f:validator binding="#{row.bindings.EffectiveTodate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.siteQBVO1.hints.EffectiveTodate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.State.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.State.label}" id="c5">
+        <af:inputText value="#{row.bindings.State.inputValue}" label="#{bindings.siteQBVO1.hints.State.label}"
+                      required="#{bindings.siteQBVO1.hints.State.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.State.displayWidth}"
+                      maximumLength="#{bindings.siteQBVO1.hints.State.precision}"
+                      shortDesc="#{bindings.siteQBVO1.hints.State.tooltip}" id="it3">
+          <f:validator binding="#{row.bindings.State.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.siteQBVO1.hints.SiteNum.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.siteQBVO1.hints.SiteNum.label}" id="c6">
+        <af:inputText value="#{row.bindings.SiteNum.inputValue}" label="#{bindings.siteQBVO1.hints.SiteNum.label}"
+                      required="#{bindings.siteQBVO1.hints.SiteNum.mandatory}"
+                      columns="#{bindings.siteQBVO1.hints.SiteNum.displayWidth}"
+                      maximumLength="#{bindings.siteQBVO1.hints.SiteNum.precision}"
+                      shortDesc="#{bindings.siteQBVO1.hints.SiteNum.tooltip}" id="it4">
+          <f:validator binding="#{row.bindings.SiteNum.validator}"/>
+        </af:inputText>
+      </af:column>
+    </af:table>
+    <!--<af:table value="#{bindings.SITEEOView2.collectionModel}" var="row" rows="#{bindings.SITEEOView2.rangeSize}"
+              emptyText="#{bindings.SITEEOView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.SITEEOView2.collectionModel.selectedRow}"
+              selectionListener="#{bindings.SITEEOView2.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.SITEEOView2.rangeSize}" id="t1">
+      <af:column headerText="#{bindings.SITEEOView2.hints.SiteId.label}" id="c1">
+        <af:inputText value="#{row.bindings.SiteId.inputValue}" label="#{bindings.SITEEOView2.hints.SiteId.label}"
+                      required="#{bindings.SITEEOView2.hints.SiteId.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.SiteId.displayWidth}"
+                      maximumLength="#{bindings.SITEEOView2.hints.SiteId.precision}"
+                      shortDesc="#{bindings.SITEEOView2.hints.SiteId.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.SiteId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column headerText="#{bindings.SITEEOView2.hints.StudyId.label}" id="c2">
+        <af:inputText value="#{row.bindings.StudyId.inputValue}" label="#{bindings.SITEEOView2.hints.StudyId.label}"
+                      required="#{bindings.SITEEOView2.hints.StudyId.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.StudyId.displayWidth}"
+                      maximumLength="#{bindings.SITEEOView2.hints.StudyId.precision}"
+                      shortDesc="#{bindings.SITEEOView2.hints.StudyId.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.StudyId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column headerText="#{bindings.SITEEOView2.hints.EffectiveStartDate.label}" id="c3">
+        <af:inputDate value="#{row.bindings.EffectiveStartDate.inputValue}"
+                      label="#{bindings.SITEEOView2.hints.EffectiveStartDate.label}"
+                      required="#{bindings.SITEEOView2.hints.EffectiveStartDate.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.EffectiveStartDate.displayWidth}"
+                      shortDesc="#{bindings.SITEEOView2.hints.EffectiveStartDate.tooltip}" id="id1">
+          <f:validator binding="#{row.bindings.EffectiveStartDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.SITEEOView2.hints.EffectiveStartDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column headerText="#{bindings.SITEEOView2.hints.EffectiveTodate.label}" id="c4">
+        <af:inputDate value="#{row.bindings.EffectiveTodate.inputValue}"
+                      label="#{bindings.SITEEOView2.hints.EffectiveTodate.label}"
+                      required="#{bindings.SITEEOView2.hints.EffectiveTodate.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.EffectiveTodate.displayWidth}"
+                      shortDesc="#{bindings.SITEEOView2.hints.EffectiveTodate.tooltip}" id="id2">
+          <f:validator binding="#{row.bindings.EffectiveTodate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.SITEEOView2.hints.EffectiveTodate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column headerText="#{bindings.SITEEOView2.hints.State.label}" id="c5">
+        <af:inputText value="#{row.bindings.State.inputValue}" label="#{bindings.SITEEOView2.hints.State.label}"
+                      required="#{bindings.SITEEOView2.hints.State.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.State.displayWidth}"
+                      maximumLength="#{bindings.SITEEOView2.hints.State.precision}"
+                      shortDesc="#{bindings.SITEEOView2.hints.State.tooltip}" id="it3">
+          <f:validator binding="#{row.bindings.State.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column headerText="#{bindings.SITEEOView2.hints.SiteNum.label}" id="c6">
+        <af:inputText value="#{row.bindings.SiteNum.inputValue}" label="#{bindings.SITEEOView2.hints.SiteNum.label}"
+                      required="#{bindings.SITEEOView2.hints.SiteNum.mandatory}"
+                      columns="#{bindings.SITEEOView2.hints.SiteNum.displayWidth}"
+                      maximumLength="#{bindings.SITEEOView2.hints.SiteNum.precision}"
+                      shortDesc="#{bindings.SITEEOView2.hints.SiteNum.tooltip}" id="it4">
+          <f:validator binding="#{row.bindings.SiteNum.validator}"/>
+        </af:inputText>
+      </af:column>
+      
+    </af:table>-->
+  </af:panelCollection>
+  <af:button text="back" action="back" id="b1" />
+  <!--<af:button text="button 1" id="b2" actionListener="#{pageFlowScope.siteBean.siteNavigationBtn}"/>-->
+</ui:composition>

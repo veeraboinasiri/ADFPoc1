@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="STUDYEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="STUDY"
+  AliasName="STUDYEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="StudyId"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="STUDY_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IconStudyNum"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="ICON_STUDY_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EffectiveStartDate"
+    ColumnName="EFFECTIVE_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="STUDY"/>
+  <Attribute
+    Name="EffectiveToDate"
+    ColumnName="EFFECTIVE_TO_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="STUDY"/>
+  <Attribute
+    Name="State"
+    IsNotNull="true"
+    Precision="15"
+    ColumnName="STATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="STUDY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SITEEO"
+    Association="model.SysC00348995Assoc"
+    AssociationEnd="model.SysC00348995Assoc.SITEEO"
+    AssociationOtherEnd="model.SysC00348995Assoc.STUDYEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC00348990"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C00348990"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.STUDYEO.StudyId"/>
+    </AttrArray>
+  </Key>
+</Entity>

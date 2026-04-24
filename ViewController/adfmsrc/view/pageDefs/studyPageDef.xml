@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="studyPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="STUDYEOView1" RangeSize="25" DataControl="AppModuleDataControl" id="STUDYEOView1Iterator"/>
+    <iterator id="siteQBVO1Iterator" Binds="siteQBVO1" DataControl="AppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="STUDYEOView1Iterator" id="STUDYEOView1">
+      <nodeDefinition DefName="model.STUDYEOView" Name="STUDYEOView10">
+        <AttrNames>
+          <Item Value="StudyId"/>
+          <Item Value="IconStudyNum"/>
+          <Item Value="EffectiveStartDate"/>
+          <Item Value="EffectiveToDate"/>
+          <Item Value="State"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

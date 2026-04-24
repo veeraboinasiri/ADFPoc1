@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">site</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">242.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>site&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">370.0459</property>
+      <property
+         name="page">/site.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn7">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="x">460.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  back&lt;/p></property>
+      <property
+         name="y">614.0918</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="TaskFlowReturn7">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">B50,242.5,423.6953,460.0,561.14355,T50</property>
+   </ControlFlowCase>
+</SDM>

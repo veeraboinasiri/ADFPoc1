@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC00348995Link"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="model.SysC00348995Assoc">
+  <ViewLinkDefEnd
+    Name="STUDYEOView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.STUDYEOView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="STUDYEOView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.STUDYEOView.StudyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SITEEOView"
+    Cardinality="-1"
+    Owner="model.SITEEOView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="SITEEOView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SITEEOView.StudyId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

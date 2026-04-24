@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="sitePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SITEEOView2" RangeSize="25" DataControl="AppModuleDataControl" id="SITEEOView2Iterator"/>
+    <iterator Binds="siteQBVO1" RangeSize="25" DataControl="AppModuleDataControl" id="siteQBVO1Iterator"/>
+    <searchRegion Binds="siteQBVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="siteQBVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SITEEOView2Iterator" id="SITEEOView2">
+      <nodeDefinition DefName="model.SITEEOView" Name="SITEEOView20">
+        <AttrNames>
+          <Item Value="SiteId"/>
+          <Item Value="StudyId"/>
+          <Item Value="EffectiveStartDate"/>
+          <Item Value="EffectiveTodate"/>
+          <Item Value="State"/>
+          <Item Value="SiteNum"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="siteQBVO1Iterator" id="siteQBVO1">
+      <nodeDefinition DefName="model.siteQBVO" Name="siteQBVO10">
+        <AttrNames>
+          <Item Value="SiteId"/>
+          <Item Value="StudyId"/>
+          <Item Value="EffectiveStartDate"/>
+          <Item Value="EffectiveTodate"/>
+          <Item Value="State"/>
+          <Item Value="SiteNum"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

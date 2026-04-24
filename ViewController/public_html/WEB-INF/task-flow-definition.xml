@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-definition">
+    <default-activity>study</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__5">
+      <managed-bean-name>studyBean</managed-bean-name>
+      <managed-bean-class>view.studyBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__6">
+      <managed-bean-name>siteBean</managed-bean-name>
+      <managed-bean-class>view.siteBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="study">
+      <page>/study.jsff</page>
+    </view>
+    <view id="site">
+      <page>/site.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>study</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>site</from-outcome>
+        <to-activity-id>site</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>site</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>study</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

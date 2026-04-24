@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="studyTF">
+    <default-activity>study</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__11">
+      <managed-bean-name>studyBean</managed-bean-name>
+      <managed-bean-class>view.studyBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="study">
+      <page>/study.jsff</page>
+    </view>
+    <task-flow-call id="siteTF">
+      <task-flow-reference>
+        <document>/WEB-INF/siteTF.xml</document>
+        <id>siteTF</id>
+      </task-flow-reference>
+      <!-- ? ADD HERE (THIS IS THE LINE YOU ASKED) to pass studyId  -->
+  <input-parameter>
+    <name>studyIdTF</name>
+    <value>#{pageFlowScope.studyIdTF}</value>
+  </input-parameter>
+
+
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>study</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>site</from-outcome>
+        <to-activity-id>siteTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>siteTF</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>study</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

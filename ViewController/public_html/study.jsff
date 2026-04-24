@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelCollection id="pc1">
+    <f:facet name="menus"/>
+    <f:facet name="toolbar"/>
+    <f:facet name="statusbar"/>
+    <af:table value="#{bindings.STUDYEOView1.collectionModel}" var="row" rows="#{bindings.STUDYEOView1.rangeSize}"
+              emptyText="#{bindings.STUDYEOView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.STUDYEOView1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.STUDYEOView1.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.STUDYEOView1.rangeSize}" id="t1">
+      <af:column headerText="#{bindings.STUDYEOView1.hints.StudyId.label}" id="c1">
+        <af:inputText value="#{row.bindings.StudyId.inputValue}" label="#{bindings.STUDYEOView1.hints.StudyId.label}"
+                      required="#{bindings.STUDYEOView1.hints.StudyId.mandatory}"
+                      columns="#{bindings.STUDYEOView1.hints.StudyId.displayWidth}"
+                      maximumLength="#{bindings.STUDYEOView1.hints.StudyId.precision}"
+                      shortDesc="#{bindings.STUDYEOView1.hints.StudyId.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.StudyId.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column headerText="#{bindings.STUDYEOView1.hints.IconStudyNum.label}" id="c2">
+        <af:inputText value="#{row.bindings.IconStudyNum.inputValue}"
+                      label="#{bindings.STUDYEOView1.hints.IconStudyNum.label}"
+                      required="#{bindings.STUDYEOView1.hints.IconStudyNum.mandatory}"
+                      columns="#{bindings.STUDYEOView1.hints.IconStudyNum.displayWidth}"
+                      maximumLength="#{bindings.STUDYEOView1.hints.IconStudyNum.precision}"
+                      shortDesc="#{bindings.STUDYEOView1.hints.IconStudyNum.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.IconStudyNum.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column headerText="#{bindings.STUDYEOView1.hints.EffectiveStartDate.label}" id="c3">
+        <af:inputDate value="#{row.bindings.EffectiveStartDate.inputValue}"
+                      label="#{bindings.STUDYEOView1.hints.EffectiveStartDate.label}"
+                      required="#{bindings.STUDYEOView1.hints.EffectiveStartDate.mandatory}"
+                      columns="#{bindings.STUDYEOView1.hints.EffectiveStartDate.displayWidth}"
+                      shortDesc="#{bindings.STUDYEOView1.hints.EffectiveStartDate.tooltip}" id="id1">
+          <f:validator binding="#{row.bindings.EffectiveStartDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.STUDYEOView1.hints.EffectiveStartDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column headerText="#{bindings.STUDYEOView1.hints.EffectiveToDate.label}" id="c4">
+        <af:inputDate value="#{row.bindings.EffectiveToDate.inputValue}"
+                      label="#{bindings.STUDYEOView1.hints.EffectiveToDate.label}"
+                      required="#{bindings.STUDYEOView1.hints.EffectiveToDate.mandatory}"
+                      columns="#{bindings.STUDYEOView1.hints.EffectiveToDate.displayWidth}"
+                      shortDesc="#{bindings.STUDYEOView1.hints.EffectiveToDate.tooltip}" id="id2">
+          <f:validator binding="#{row.bindings.EffectiveToDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.STUDYEOView1.hints.EffectiveToDate.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column headerText="#{bindings.STUDYEOView1.hints.State.label}" id="c5">
+        <af:inputText value="#{row.bindings.State.inputValue}" label="#{bindings.STUDYEOView1.hints.State.label}"
+                      required="#{bindings.STUDYEOView1.hints.State.mandatory}"
+                      columns="#{bindings.STUDYEOView1.hints.State.displayWidth}"
+                      maximumLength="#{bindings.STUDYEOView1.hints.State.precision}"
+                      shortDesc="#{bindings.STUDYEOView1.hints.State.tooltip}" id="it3">
+          <f:validator binding="#{row.bindings.State.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column id="c6">
+        <af:button text="gotosite" action="site" id="b1" actionListener="#{pageFlowScope.studyBean.navigate}">
+         <af:setPropertyListener 
+        from="#{row.bindings.StudyId.inputValue}" 
+        to="#{pageFlowScope.studyIdTF}"
+        type="action"/>
+        <!--<af:setPropertyListener 
+    from="#{row.StudyId}" 
+    to="#{pageFlowScope.studyBean.studyId}"
+    type="action"/>-->
+    </af:button>
+      </af:column>
+    </af:table>
+  </af:panelCollection>
+</ui:composition>
